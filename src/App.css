@@ -1,0 +1,153 @@
+.form-admin{
+  display: flex;
+  width: 100%;
+  height: 720px;
+}
+.header{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 16%;
+  background-color: #313947
+}
+.admin-logo{
+  background-size:contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100px;
+  background-image: url('img/3D-1070-H.png');
+}
+.header-nav{
+  width: 100%;
+  flex-wrap: wrap;
+  height: 80%;
+}
+.admin-menu{
+  width: 100%;
+  height: 60px;
+}
+.admin-menu a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding-left: 15%;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+.admin-menu i{
+  margin-right: 20px;
+}
+.admin-menu a:hover{
+  background-color: rgb(37, 40, 182);
+}
+
+
+
+
+
+.admin-content{
+  flex: 1;
+  background-color: #fff;
+}
+.infor-user{
+  width: 100%;
+  height: 9.6%;
+  border-bottom: solid 1px rgb(153, 149, 149);
+  background-color: #fff;
+}
+.content-use{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 82%;
+  background-color: rgb(231, 238, 238);
+  border-bottom: solid 1px rgb(153, 149, 149);
+}
+.admin-footer{
+  width: 100%;
+  height: 8%;
+  border-bottom: solid 1px rgb(153, 149, 149);
+}
+
+h2 {
+  text-align: center;
+  width: 100%;
+  color: rgb(0, 0, 0);
+  font-weight: lighter;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+  'Open Sans', 'Helvetica Neue', sans-serif, "Helvetica Neue", Helvetica, sans-serif;
+}
+label {
+  font-size: 0.9em;
+  margin-bottom: 0.25em ;
+  color: rgb(0, 0, 0);
+  font-weight:500;
+}
+input {
+  padding: 10px 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid rgb(48, 46, 46);
+}
+input::placeholder {
+  font-size: 0.9em;
+  font-weight: lighter;
+  color: #999;
+}
+/*
+Css Form Category
+*/
+.input-id,
+.input-name{
+  width: 450px;
+  margin-top: 1%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.createall {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.createall button {
+  text-align: center;
+  background-color: rgb(117, 117, 117);
+  color: #fff;
+  border: 2px solid #fff;
+  width: 30%;
+  margin-top: 1em;
+  padding: 4px 0px;
+  font-size: 1em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  margin-bottom: 0.25em;
+}
+.createall button:active {
+  color: rgb(66, 46, 46);
+  background-color: rgb(34, 32, 32);
+  border: 2px solid #555555;
+}
+.content-table{
+  margin-top: 10px;
+  width: 1150px;
+  height: 400px;
+}
+.table-body{
+  height: 350px;
+  
+}
+.table-null{
+  width: 100%;
+  height: 350px;
+  background-color: aqua;
+}
+.trang-ad{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+}
