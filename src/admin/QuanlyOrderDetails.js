@@ -20,6 +20,9 @@ import axios from 'axios';
 import Pagination from '@material-ui/lab/Pagination';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 function QuanlyOrderDetails() {
   const listOrderDetails = {
     id: "",
@@ -311,6 +314,14 @@ function QuanlyOrderDetails() {
               value={dataOrderDetails.quantity}
             />
           </div>
+          <div className="input-name">
+                        <label htmlFor="name">Available</label>
+                        <RadioGroup row aria-label="ptrueosition" onChange={onChangeHandler} name="position" defaultValue="top">
+                            <FormControlLabel type="radio" value="Chờ xác nhận" checked={dataOrderDetails.statusdeli === 'Chờ xác nhận'} name="statusdeli" control={<Radio color="primary" />} label="Chờ xác nhận" />
+                            <FormControlLabel type="radio" value="Đang giao" checked={dataOrderDetails.statusdeli === 'Đang giao'} name="statusdeli" control={<Radio color="primary" />} label="Đang giao" />
+                            <FormControlLabel type="radio" value="Đã nhận hàng" checked={dataOrderDetails.statusdeli === 'Đã nhận hàng'} name="statusdeli" control={<Radio color="primary" />} label="Đã nhận hàng" />
+                        </RadioGroup>
+                    </div>
         </DialogContent>
         <DialogActions className="createall">
           <Button

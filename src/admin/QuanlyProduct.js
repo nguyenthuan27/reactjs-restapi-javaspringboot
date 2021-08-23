@@ -26,7 +26,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 function QuanlyProduct() {
 
     const listProduct = {
-      id:"",
+        id: "",
+        image: "",
         category: {
             id: ""
         }
@@ -75,13 +76,13 @@ function QuanlyProduct() {
     //Create
     const onCreateProduct = () => {
         const url = 'http://localhost:8080/api/v1/rest/products';
-            axios({
-                url: url,
-                method: 'POST',
-                data: dataProduct,
-            })
+        axios({
+            url: url,
+            method: 'POST',
+            data: dataProduct,
+        })
             .then((response) => {
-                 const { data } = response;
+                const { data } = response;
                 setProduct([
                     ...product,
                     data
@@ -123,7 +124,33 @@ function QuanlyProduct() {
                 console.log(error, error.response)
             })
     }
-
+    // const onFileChangeHandler = (e) => {
+    //     e.preventDefault();
+    //     const url = "http://localhost:8080/api/v1/rest/upload/folderimg";
+    //     const formData = new FormData();
+    //     formData.append("file", e.target.files[0]);
+    //     console.log("formdat",  formData.append("file", e.target.files[0]))
+    //     axios({
+    //         url: url,
+    //         method: "POST",
+    //         data: formData,
+    //         headers: {
+    //             "content-type": "multipart/form-data",
+    //         },
+    //     })
+    //         .then((respon) => {
+    //             const { data } = respon;
+    //             const img = data.name;
+    //             console.log("ảnh",img);
+    //             // setProduct([
+    //             //     ...product,
+    //             //     img
+    //             // ]);
+    //         })
+    //         .catch(function (error) {
+    //             console.log(error);
+    //         });
+    // };
 
     //Delete
     const onHandleDelete = (id) => {
@@ -176,6 +203,33 @@ function QuanlyProduct() {
         }
     }
 
+    const onFileChangeHandler = (e) => {
+        e.preventDefault();
+        const url = "http://localhost:8080/api/v1/rest/upload/folderimg";
+        const formData = new FormData();
+        formData.append("file", e.target.files[0]);
+        // console.log("formdat",  formData.append("file", e.target.files[0]))
+        //const { name, value } = e.target.files[0];
+        axios({
+            url: url,
+            method: "POST",
+            data: formData,
+            headers: {
+                "content-type": "multipart/form-data",
+            },
+        })
+            .then((respon) => {
+                const { data } = respon;
+                console.log("ảnh", data);
+                setDataProduct({
+                    ...dataProduct,
+                    image : data.name
+                })
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    };
     const [open, setOpen] = useState(false);
     const handleClickOpen = () => {
         setOpen(true);
@@ -232,6 +286,7 @@ function QuanlyProduct() {
                         />
                     </div>
                     <div className="input-name">
+                        <img className="image-pr" src={`http://localhost:8080/assets/folderimg/${dataProduct.image}`} />
                         {/* <TextField
                             id="file"
                             type="file"
@@ -241,7 +296,7 @@ function QuanlyProduct() {
                             name="image"
                         //value={dataProduct.image}
                         /> */}
-                        <input type="file" onChange={onChangeHandler} name="image" />
+                        <input type="file" onChange={onFileChangeHandler} name="image" />
 
                     </div>
                     <div className="input-name">
